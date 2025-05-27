@@ -29,7 +29,7 @@ std::map <Color, std::string> ColorNames = {
 std::map <Os, std::string> OsNames = {
 	{iOS, "iOS"},
 	{Android, "Android"},
-	{UNDEFO, "Unknown Operationl System"}
+	{UNDEFO, "Unknown Operational System"}
 };
 
 std::map <Protection, std::string> ProtHave = {
