@@ -1,21 +1,17 @@
 #pragma once
-#include"Smartphone.h"
+#include"Product.h"
 using namespace std;
 
 class Catalog {
 private:
-    list<Smartphone> smartphones;
-    int lenght = 0;
+	list<Product> smartphones;
+	int lenght = 0;
 public:
-    void addSmartphone(string model, double price, Manufacturer manufacturer,
-        Color color, float display, short ram,
-        short storage, Manufacturer cpu, Os os, short ncams, Protection protection, Mtype currency);
-    void addSmartphone(string model, double price, SmSpec spec, Mtype currency);
-    void addSmartphone(const Smartphone& phone);
-    void addSmartphone(Smartphone&& phone);
-    Smartphone getSmartphone(string model);
-    int Length();
-    Smartphone search(const Smartphone& searchSmartphone);
-    Smartphone search(string model, Manufacturer manufacturer);
-    vector<Smartphone> search(Smartphone& searchSmartphone);
+	void addSmartphone(const Product& phone);
+	void addSmartphone(Product&& phone);
+	Product getSmartphone(string model);
+	int Length();
+	Product search(const Smartphone& searchSmartphone);
+	Product search(string model, Manufacturer manufacturer);
+	vector<Product> search(Smartphone& searchSmartphone);
 };
