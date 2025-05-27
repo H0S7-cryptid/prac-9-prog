@@ -1,43 +1,28 @@
-#ifndef SMARTPHONE_CHARS
-#define SMARTPHONE_CHARS
+#ifndef SMARTPHONE
+#define SMARTPHONE
 
-#include "NEEDED_LIB.h"
+#include "Smartphone_Char-s.h"
 
-class SmSpec {
+using namespace std;
+
+class Smartphone {
 private:
-	Manufacturer manufacturer; Color color;
-	Manufacturer cpu; Os os; Protection protection;
-	short ram;
-	short storage;
-	float display;
-	short ncams;
+	string model;
+	SmSpec specs;
 public:
-	// Конструкторы
-	SmSpec();
-	SmSpec(Manufacturer m, Color c, short r, short st, 
-		Manufacturer cp, Os o, float d, short nc, Protection p);
+	// Конструкторы класса
+	Smartphone();
+	Smartphone(string model, SmSpec spec);
+
+	// Оператор присваивания
+	Smartphone& operator=(const Smartphone& other);
 
 	// Геттеры
-	Color getColor() const;
-	Manufacturer getCPU() const;
-	Manufacturer getManufacturer() const;
-	Protection getProtection() const;
-	Os getOS() const;
-	float getDisplay() const;
-	short getRAM() const;
-	short getStorage() const;
-	short getNCams() const;
+	string getModel() const;
+	SmSpec getSpec() const;
 
-	// оператор присваивания
-	SmSpec& operator=(const SmSpec& sp);
-
-	// метод установки значений
-	void setSpecs(Manufacturer m, Color c, short r, short st,
-		Manufacturer cp, Os o, float d, short nc, Protection p);
-	void setSpecs(SmSpec& spec);
-
-	// Метод вывода полей класса
-	void print() const;
+	// Вывод информации о телефоне в поток
+	void Print() const;
 };
 
 #endif
